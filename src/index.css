@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('./assets/fonts/PlayfairDisplay.ttf');
+    }
+    @font-face {
+        font-family: 'DM Sans';
+        src: url('./assets/fonts/DM_Sans.ttf');
+  }
+}
+
+li .active {
+    border: 1px solid lightgrey;
+    background-color: lightgray;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 950px) {
+    li .active {
+        background: inherit;
+        border: none;
+        border-bottom: 2px solid lightgray;
+        border-radius: 0px;
+    }
+}
