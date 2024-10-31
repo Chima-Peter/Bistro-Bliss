@@ -1,14 +1,45 @@
+import { useState } from "react";
 import ExportNav from "./components/ui/nav/export_nav"
 import Footer from "./components/ui/nav/footer"
 import { RiArrowDropDownLine } from "react-icons/ri";
-
+import validator from 'validator'
 
 const BookPage = () => {
+    const [form, setForm] = useState({
+        date: '',
+        time: '',
+        name: '',
+        phone: '',
+    })
+    const [text, setText] = useState('')
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({...form, [e.target.name]: e.target.value })
+        setText('')
+    }
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        // submit the form to your server here
+            if (!validator.isEmpty(form.date) && validator.isMobilePhone(form.phone) && !validator.isEmpty(form.name) && !validator.isEmpty(form.time)) {
+                setText(`Your booking has been confirmed. We hope to see you on ${new Date(form.date).toLocaleDateString()}!`)
+            setForm({
+                name: '',
+                phone: '',
+                time: '',
+                date: '',
+            })
+        } else {
+            setText('Please fill out all required fields.')
+        }
+    }
+
+
   return (
     <main className="flex flex-col min-h-[100vh] font-body gap-14">
         <ExportNav />
 
-        <section className="pt-[110px] items-center justify-center px-8 md:px-12 lg:px-16 md:pb-20 flex flex-col gap-4">
+        <section className="pt-[110px] items-center justify-center px-8 md:px-12 lg:px-16 md:pb-36 flex flex-col gap-4">
             <h1 className="text-4xl md:text-6xl font-main tracking-wide font-medium xs:text-4xl">
                 Book A Table
             </h1>
@@ -19,38 +50,44 @@ const BookPage = () => {
 
 
         <section className="relative flex flex-col gap-8">
-            <form className="flex flex-col gap-6 bg-white rounded-xl p-8 shadow-2xl shadow-gray-300 md:border w-[100%] md:w-[600px] md:absolute md:left-[50%] md:translate-x-[-50%] md:translate-y-[-38%]">
+            <form className="flex font-body flex-col gap-6 bg-white rounded-xl p-8 shadow-2xl shadow-gray-300 md:border w-[100%] md:w-[600px] md:absolute md:left-[50%] md:translate-x-[-50%] md:translate-y-[-42%]" noValidate onSubmit={handleSubmit}>
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
                     <label htmlFor="date" className="flex items-start gap-2 flex-col text-sm font-medium">
                         Date
-                        <input type="date" name="date" id="date" className="w-[100%] font-light md:w-[250px] py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 focus:shadow-md" />
+                        <input onChange={handleInputChange} value={form.date} type="date" name="date" id="date" className="w-[100%] font-light md:w-[250px] py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
                     </label>
                     <label htmlFor="time" className="flex items-start gap-2 flex-col text-sm font-medium">
                         Time
-                        <input type="time" name="time" id="time" className="w-[100%] font-light md:w-[250px] py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 focus:shadow-md" />
+                        <input onChange={handleInputChange} value={form.time} type="time" name="time" id="time" className="w-[100%] font-light md:w-[250px] py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
                     </label>
                 </div>
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
                     <label htmlFor="name" className="flex items-start gap-2 flex-col text-sm font-medium">
                         Name
-                        <input type="text" name="name" autoComplete="off" autoFocus id="name" className="w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 focus:shadow-md text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
+                        <input onChange={handleInputChange} value={form.name} type="text" name="name" autoComplete="off" autoFocus id="name" className="capitalize w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
                     </label>
                     <label htmlFor="phone"  className="flex items-start gap-2 flex-col text-sm font-medium">
                         Phone
-                        <input type="tel" name="phone" autoComplete="off" id="phone" className="w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 focus:shadow-md text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
+                        <input onChange={handleInputChange} value={form.phone} type="tel" name="phone" autoComplete="off" id="phone" className="w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
                     </label>
                 </div>
                 <label htmlFor="total" className="flex items-start gap-2 relative flex-col text-sm font-medium">
-                    Total Person
-                    <select name="total" id="total" className="w-[100%] py-2 appearance-none cursor-pointer px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 focus:shadow-md" >
-                        <option value="1 Person">1 Person</option>
-                        <option value="2 Persons">2 Persons</option>
-                        <option value="3 Persons">3 Persons</option>
-                        <option value="4 Persons">4 Persons</option>
-                        <option value="5 Persons">5 Persons</option>
+                    Total Guests
+                    <select name="total" id="total" className="w-[100%] py-2 appearance-none cursor-pointer px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" >
+                        <option value="1 Guest">1 Guest</option>
+                        <option value="2 Guests">2 Guests</option>
+                        <option value="3 Guests">3 Guests</option>
+                        <option value="4 Guests">4 Guests</option>
+                        <option value="5 Guests">5 Guests</option>
                     </select>
                     <RiArrowDropDownLine className="w-7 h-7 absolute top-8 right-2 cursor-pointer" />
                 </label>
+                <button type="submit" className="w-[100%] text-sm text-center border-[#AD343E] bg-[#AD343E] py-2 text-white rounded-2xl">
+                    Book A Table
+                </button>
+                <p className="text-sm font-medium tracking-wide leading-6 self-center text-[#AD343E]">
+                    {text}
+                </p>
             </form>
 
             <iframe 
