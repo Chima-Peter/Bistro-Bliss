@@ -1,6 +1,6 @@
-import author1 from '../../assets/images/author1.webp'
-import author2 from '../../assets/images/author2.webp'
-import author3 from '../../assets/images/author3.webp'
+import author1 from '../../assets/images/home_page/author1.webp'
+import author2 from '../../assets/images/home_page/author2.webp'
+import author3 from '../../assets/images/home_page/author3.webp'
 
 type Props = {
     header: string

@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
-import icon from '../../../assets/images/icon.webp'
+import icon from '../../../assets/images/home_page/icon.webp'
 import { useState, useEffect } from "react"
 
 

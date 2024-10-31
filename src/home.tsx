@@ -6,17 +6,15 @@ import { GiBerriesBowl, GiCakeSlice } from "react-icons/gi";
 import { RiDrinks2Fill, RiPriceTag2Line } from "react-icons/ri";
 import { IoCartOutline } from "react-icons/io5";
 import { CiDeliveryTruck } from "react-icons/ci";
-import { FiPhone } from "react-icons/fi";
-import { MdMailOutline, MdOutlineLocationOn } from "react-icons/md";
-import second_image from './assets/images/second_image.webp'
-import third_image from './assets/images/kebab.webp'
-import fourth_image from './assets/images/female.webp'
-import fifth_image from './assets/images/man-wife.webp'
-import sixth_image from './assets/images/friends.webp'
-import seventh_image from './assets/images/chef.webp'
-import eight_image from './assets/images/curry.webp'
-import ninth_image from './assets/images/pot.webp'
+import third_image from './assets/images/home_page/kebab.webp'
+import fourth_image from './assets/images/home_page/female.webp'
+import fifth_image from './assets/images/home_page/man-wife.webp'
+import sixth_image from './assets/images/home_page/friends.webp'
+import seventh_image from './assets/images/home_page/chef.webp'
+import eight_image from './assets/images/home_page/curry.webp'
+import ninth_image from './assets/images/home_page/pot.webp'
 import Reviews from "./components/ui/reviews";
+import About from "./components/ui/about"
 
 
 const HomePage = () => {
@@ -68,7 +66,7 @@ const HomePage = () => {
   return (
     <main className="font-body flex flex-col gap-12">
       <ExportNav />
-        <section className="bg-[url('./assets/images/first_image.webp')] relative w-[100%] h-[100vh] flex items-center flex-col justify-center gap-8 lg:gap-6">
+        <section className="bg-[url('./assets/images/home_page/first_image.webp')] relative w-[100%] h-[802px] flex items-center flex-col justify-center gap-8 lg:gap-6">
           <h2 className="font-main leading-[54px] font-[100] text-[70px] w-[95%] md:w-[500px] text-center tracking-wider">
             Best food for your taste
           </h2>
@@ -111,50 +109,7 @@ const HomePage = () => {
         </section>
 
 
-        <section className="bg-[#F9F9F7] w-[100%] px-8 md:px-12 lg:px-16 flex flex-col tablet:flex-row justify-between items-center py-16 tablet:gap-8 gap-14">
-          <div className="w-[100%] tablet:w-[400px] lg:w-[500px] relative flex justify-center tablet:justify-start">
-            <img src={second_image} alt="picture of food" className="rounded-xl w-[100%] tablet:w-[95%]" />
-            <div className="flex-col gap-6 absolute tablet:top-[50%] lg:top-[60%] tablet:right-[0] tablet:p-6 p-8 w-[40%] tablet:w-[300px] rounded-xl bg-[#474747] tablet:flex hidden">
-              <h4 className="text-sm text-white">
-                Come and visit us
-              </h4>
-              <div className="flex flex-col gap-4">
-                <div className="flex gap-4">
-                  <FiPhone className="w-4 h-4 text-white" />
-                  <Link className="text-xs text-white" to={'tel:+2348075310346'}>
-                    +234 807 531 0346
-                  </Link>
-                </div>
-                <div className="flex gap-4">
-                  <MdMailOutline className="w-5 h-5 text-white" />
-                  <Link className="text-xs text-white" to={'mailto:bistrobliss@gmail.com'}>
-                    bistrobliss@gmail.com
-                  </Link>
-                </div>
-                <div className="flex gap-4">
-                  <MdOutlineLocationOn className="w-6 h-6 text-white" />
-                  <Link className="text-xs text-white" to={'https://www.google.com/maps/search/?api=1&query=837+W.+Marshall+Lane,+Marshalltown,+IA+50158'} target="_blank">
-                    837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-6 w-[100%] tablet:w-[40%]">
-            <h4 className="text-4xl font-medium font-main">
-              We provide healthy food for you and your family.
-            </h4>
-            <p className="text-sm font-medium">
-              Our story began with a vision to create a unique dining experience that merges fine dining, exceptional service, and a vibrant ambiance. Rooted in city's rich culinary culture, we aim to honor our local roots while infusing a global palate.
-            </p>
-            <p className="text-sm font-light">
-              At place, we believe that dining is not just about food, but also about the overall experience. Our staff, renowned for their warmth and dedication, strives to make every visit an unforgettable event.
-            </p>
-            <Link to={'/book'} className="py-2 px-4 text-sm rounded-3xl border border-black w-fit">
-              More About Us
-            </Link>
-          </div>
-        </section>
+        <About link={true} color={false} />
 
 
         <section className="flex flex-col gap-10 py-12 px-8 md:px-12 lg:px-16">
@@ -223,6 +178,8 @@ const HomePage = () => {
 
 
         <Reviews header="What Our Customers Say" />
+
+
       <Footer />
     </main>
   )
