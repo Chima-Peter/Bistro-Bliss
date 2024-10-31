@@ -4,6 +4,7 @@ import HomePage from "./home_page"
 import AboutPage from "./about_page"
 import MenuPage from "./menu_page"
 import BookPage from "./book_page"
+import ContactUsPage from "./contact_page"
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path='/menu' element={<MenuPage />} />
             <Route path='/book' element={<BookPage />} />
+            <Route path='/contact' element={<ContactUsPage />} />
          </Routes> 
       </BrowserRouter>
   )

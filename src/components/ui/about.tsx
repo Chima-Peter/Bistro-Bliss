@@ -20,7 +20,7 @@ const About = (props: Props) => {
             <div className="flex gap-4">
                 <FiPhone className="w-4 h-4 text-white" />
                 <Link className="text-xs text-white" to={'tel:+2348075310346'}>
-                +234 807 531 0346
+                    +234 807 531 0346
                 </Link>
             </div>
             <div className="flex gap-4">

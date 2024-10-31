@@ -36,10 +36,10 @@ const BookPage = () => {
 
 
   return (
-    <main className="flex flex-col min-h-[100vh] font-body gap-14">
+    <main className="flex flex-col min-h-[100vh] font-body gap-8 md:gap-0">
         <ExportNav />
 
-        <section className="pt-[110px] items-center justify-center px-8 md:px-12 lg:px-16 md:pb-36 flex flex-col gap-4">
+        <section className="pt-[110px] items-center bg-[#F9F9F7] justify-center px-8 md:px-12 lg:px-16 md:pb-48 flex flex-col gap-4 pb-16">
             <h1 className="text-4xl md:text-6xl font-main tracking-wide font-medium xs:text-4xl">
                 Book A Table
             </h1>
@@ -50,7 +50,7 @@ const BookPage = () => {
 
 
         <section className="relative flex flex-col gap-8">
-            <form className="flex font-body flex-col gap-6 bg-white rounded-xl p-8 shadow-2xl shadow-gray-300 md:border w-[100%] md:w-[600px] md:absolute md:left-[50%] md:translate-x-[-50%] md:translate-y-[-42%]" noValidate onSubmit={handleSubmit}>
+            <form className="flex font-body flex-col gap-6 bg-white rounded-xl p-8 md:shadow-lg md:shadow-gray-300 md:border w-[100%] md:w-[600px] md:absolute md:left-[50%] md:translate-x-[-50%] md:translate-y-[-42%]" noValidate onSubmit={handleSubmit}>
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
                     <label htmlFor="date" className="flex items-start gap-2 flex-col text-sm font-medium">
                         Date
@@ -64,11 +64,11 @@ const BookPage = () => {
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
                     <label htmlFor="name" className="flex items-start gap-2 flex-col text-sm font-medium">
                         Name
-                        <input onChange={handleInputChange} value={form.name} type="text" name="name" autoComplete="off" autoFocus id="name" className="capitalize w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
+                        <input onChange={handleInputChange} value={form.name} placeholder="Enter your name" type="text" name="name" autoComplete="off" autoFocus id="name" className="capitalize w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
                     </label>
                     <label htmlFor="phone"  className="flex items-start gap-2 flex-col text-sm font-medium">
                         Phone
-                        <input onChange={handleInputChange} value={form.phone} type="tel" name="phone" autoComplete="off" id="phone" className="w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
+                        <input onChange={handleInputChange} placeholder="x-xxx-xxx-xxx" value={form.phone} type="tel" name="phone" autoComplete="off" id="phone" className="w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
                     </label>
                 </div>
                 <label htmlFor="total" className="flex items-start gap-2 relative flex-col text-sm font-medium">
