@@ -8,14 +8,14 @@ import { IoCartOutline } from "react-icons/io5";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
 import { MdMailOutline, MdOutlineLocationOn } from "react-icons/md";
-import second_image from './assets/images/second_image.png'
-import third_image from './assets/images/kebab.png'
-import fourth_image from './assets/images/female.png'
-import fifth_image from './assets/images/man-wife.png'
-import sixth_image from './assets/images/friends.png'
-import seventh_image from './assets/images/chef.png'
-import eight_image from './assets/images/curry.png'
-import ninth_image from './assets/images/pot.png'
+import second_image from './assets/images/second_image.webp'
+import third_image from './assets/images/kebab.webp'
+import fourth_image from './assets/images/female.webp'
+import fifth_image from './assets/images/man-wife.webp'
+import sixth_image from './assets/images/friends.webp'
+import seventh_image from './assets/images/chef.webp'
+import eight_image from './assets/images/curry.webp'
+import ninth_image from './assets/images/pot.webp'
 import Reviews from "./components/ui/reviews";
 
 
@@ -68,7 +68,7 @@ const HomePage = () => {
   return (
     <main className="font-body flex flex-col gap-12">
       <ExportNav />
-        <section className="bg-[url('./assets/images/first_image.png')] relative w-[100%] h-[100vh] flex items-center flex-col justify-center gap-8 lg:gap-6">
+        <section className="bg-[url('./assets/images/first_image.webp')] relative w-[100%] h-[100vh] flex items-center flex-col justify-center gap-8 lg:gap-6">
           <h2 className="font-main leading-[54px] font-[100] text-[70px] w-[95%] md:w-[500px] text-center tracking-wider">
             Best food for your taste
           </h2>

@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from 'framer-motion'
 import { MdCancelPresentation } from "react-icons/md";
-import iconImage from '../../../assets/images/icon.png'
+import iconImage from '../../../assets/images/icon.webp'
 
 function MobileNav() {
    const [icon, setIcon] = useState(true)

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import icon from '../../../assets/images/icon.png'
+import icon from '../../../assets/images/icon.webp'
 import { FaFacebookF, FaXTwitter, FaInstagram } from "react-icons/fa6";
-import grid1 from '../../../assets/images/grid1.png'
-import grid2 from '../../../assets/images/grid2.png'
-import grid3 from '../../../assets/images/grid3.png'
-import grid4 from '../../../assets/images/grid4.png'
+import grid1 from '../../../assets/images/grid1.webp'
+import grid2 from '../../../assets/images/grid2.webp'
+import grid3 from '../../../assets/images/grid3.webp'
+import grid4 from '../../../assets/images/grid4.webp'
 
 const Footer = () => {
     const pages = [ 'home', 'about', 'menu', 'contact' ]
