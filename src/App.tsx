@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import ErrorPage from "./errorpage"
-import HomePage from "./home"
+import HomePage from "./home_page"
 import AboutPage from "./about_page"
-import Menu from "./menu"
+import MenuPage from "./menu_page"
+import BookPage from "./book_page"
 
 export function App() {
   return (
@@ -11,7 +12,8 @@ export function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<ErrorPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path='/menu' element={<Menu />} />
+            <Route path='/menu' element={<MenuPage />} />
+            <Route path='/book' element={<BookPage />} />
          </Routes> 
       </BrowserRouter>
   )

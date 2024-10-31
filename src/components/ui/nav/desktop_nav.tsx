@@ -43,7 +43,7 @@ const DesktopNav = () => {
           </NavLink>
         </li>
         <li className="text-[14px] cursor-pointer p-2">
-          <NavLink to={'/book'} className={`px-4 py-2`}>
+          <NavLink to={'/contact'} className={`px-4 py-2`}>
             Contact Us
           </NavLink>
         </li>

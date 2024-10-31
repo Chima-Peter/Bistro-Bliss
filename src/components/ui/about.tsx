@@ -31,8 +31,8 @@ const About = (props: Props) => {
             </div>
             <div className="flex gap-4">
                 <MdOutlineLocationOn className="w-6 h-6 text-white" />
-                <Link className="text-xs text-white" to={'https://www.google.com/maps/search/?api=1&query=837+W.+Marshall+Lane,+Marshalltown,+IA+50158'} target="_blank">
-                837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles
+                <Link className="text-xs text-white" to={'https://www.google.com/maps/dir/?api=1&destination=1234+Sunset+Boulevard,+Los+Angeles,+CA+90026'} target="_blank">
+                    1234 Sunset Boulevard, Los Angeles, CA 90026, USA
                 </Link>
             </div>
             </div>

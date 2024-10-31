@@ -11,7 +11,7 @@ interface menuTypes {
     text: string
 }
 
-const Menu = () => {
+const MenuPage = () => {
     const [menuItems, setMenuItems] = useState<menuTypes[]>(allItems)
     const [showButton, setShowButton] = useState('all')
     
@@ -96,4 +96,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default MenuPage
