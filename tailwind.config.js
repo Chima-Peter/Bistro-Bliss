@@ -6,6 +6,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'tablet': '850px',
+      'md': '680px',
+      'lg': '1024px',
+    },
     extend: {
       fontFamily: {
         "main": ['Playfair Display'],

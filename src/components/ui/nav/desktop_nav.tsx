@@ -1,10 +1,25 @@
 import { Link, NavLink } from "react-router-dom"
 import icon from '../../../assets/images/icon.png'
+import { useState, useEffect } from "react"
 
 
 const DesktopNav = () => {
+
+  const [scroll, setScroll] = useState(false)
+
+
+   useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+   })
+
+   const handleScroll = () => {
+    setScroll(window.scrollY > 0)
+   }   
+
   return (
-    <nav className="w-[100%] px-16 py-6 flex justify-between items-center font-header font-body fixed font-medium border-b bg-white border-gray-400">
+    <nav className={`w-[100%] px-16 py-6 flex justify-between items-center font-header font-body fixed z-10 font-medium bg-white ${scroll ? 'shadow-md shadow-gray-100' : ''}`}>
     <Link to={'/'} className="flex items-center gap-1">
         <img src={icon} alt="logo" className="w-8 h-8" />
         <h1 className="font-main italic text-[26px] font-semibold tracking-wide">

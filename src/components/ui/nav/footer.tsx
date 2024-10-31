@@ -3,13 +3,13 @@ import icon from '../../../assets/images/icon.png'
 import { FaFacebookF, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import grid1 from '../../../assets/images/grid1.png'
 import grid2 from '../../../assets/images/grid2.png'
-import grid3 from '../../../assets/images/grid4.png'
+import grid3 from '../../../assets/images/grid3.png'
 import grid4 from '../../../assets/images/grid4.png'
 
 const Footer = () => {
     const pages = [ 'home', 'about', 'menu', 'contact' ]
   return (
-    <footer className="bg-[#474747] text-white mt-[100px] flex px-8 lg:px-16 justify-between font-body py-6 lg:py-12 w-[100%] flex-col gap-6 lg:gap-0 lg:flex-row pb-12">
+    <footer className="bg-[#474747] text-white mt-[30px] flex px-8 lg:px-16 justify-between font-body py-6 lg:py-12 w-[100%] flex-col gap-6 lg:gap-0 lg:flex-row pb-12">
         <section className='flex gap-5 flex-col items-start border-b-2 border-b-white pb-4 lg:border-0 lg:pb-0'>
             <div className='flex gap-2 items-center'>
                 <img src={icon} alt="logo" className='w-8 h-8' />
