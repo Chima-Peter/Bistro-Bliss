@@ -41,7 +41,7 @@ function MobileNav() {
 
 
    return (
-      <nav className={`flex flex-col bg-white py-4 px-2 text-black w-full gap-4 fixed z-10 ${!icon ? 'bg-white h-[100%] overflow-hidden border-b-0' : ''} ${scroll ? 'shadow-md shadow-gray-100' : ''}`}>
+      <nav className={`flex flex-col bg-white py-4 px-2 text-black w-full gap-4 fixed z-10 ${!icon ? 'bg-white h-[100%] overflow-hidden border-b-0' : ''} ${scroll ? 'shadow-md shadow-gray-200' : ''}`}>
          <div className="flex w-full justify-between items-center py-2 md:py-5 px-4 md:px-8 lg:px-12">
          <  Link to={'/'} className="flex items-center gap-1">
                 <img src={iconImage} alt="logo" className="w-6 h-6" />

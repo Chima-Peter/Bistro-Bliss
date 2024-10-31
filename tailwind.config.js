@@ -10,6 +10,7 @@ module.exports = {
       'tablet': '850px',
       'md': '680px',
       'lg': '1024px',
+      'xs': '400px'
     },
     extend: {
       fontFamily: {

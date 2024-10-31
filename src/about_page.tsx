@@ -1,7 +1,7 @@
 import About from "./components/ui/about"
 import ExportNav from "./components/ui/nav/export_nav"
 import Footer from "./components/ui/nav/footer"
-import info_image from './assets/images/about_page/info_image.png'
+import info_image from './assets/images/about_page/info_image.webp'
 import Reviews from "./components/ui/reviews"
 
 const AboutPage = () => {
@@ -19,13 +19,15 @@ const AboutPage = () => {
             text: 'At Bistro Bliss, we strive to provide the best possible prices with perfect dining experience.'
         }
     ]
+
+
   return (
     <main className="font-body flex flex-col gap-12">
         <ExportNav />
 
 
         <section className="flex flex-col gap-12 pt-[60px]">
-            <div className="w-[100%] bg-[url('./assets/images/about_page/BG.png')] h-[690px] flex items-center justify-center ">
+            <div className="w-[100%] bg-[url('./assets/images/about_page/BG.webp')] h-[690px] flex items-center justify-center ">
                 <p className="font-main font-regular text-4xl text-center md:text-left md:w-[550px] tracking-wide leading-12 w-[90%] text-white">
                     Feel the authentic original taste from us.
                 </p>

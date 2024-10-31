@@ -81,8 +81,7 @@ const HomePage = () => {
               Explore Menu
             </Link>
           </div>
-          <div className="w-[100%] h-[100vh] opacity-15 lg:opacity-20 bg-black top-0 left-0 absolute">
-          </div>
+          <div className="w-[100%] h-[802px] opacity-15 lg:opacity-20 bg-black top-0 left-0 absolute" />
         </section>
 
 
