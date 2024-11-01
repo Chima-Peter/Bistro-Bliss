@@ -31,7 +31,7 @@ const Reviews = (props: Props) => {
         }
     ]
   return (
-    <section className="flex flex-col gap-8 px-8 md:px-12 lg:px-16 pt-8">
+    <section className="flex flex-col gap-10 px-8 md:px-12 lg:px-16 pt-8">
         <h5 className='font-main text-2xl self-center'>
             {props.header}
         </h5>

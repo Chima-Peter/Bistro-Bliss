@@ -52,21 +52,21 @@ const BookPage = () => {
         <section className="relative flex flex-col gap-8">
             <form className="flex font-body flex-col gap-6 bg-white rounded-xl p-8 md:shadow-lg md:shadow-gray-300 md:border w-[100%] md:w-[600px] md:absolute md:left-[50%] md:translate-x-[-50%] md:translate-y-[-42%]" noValidate onSubmit={handleSubmit}>
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
-                    <label htmlFor="date" className="flex items-start gap-2 flex-col text-sm font-medium">
+                    <label htmlFor="date" className="flex items-start gap-2 flex-col text-sm font-medium w-[100%] md:w-[250px]">
                         Date
-                        <input onChange={handleInputChange} value={form.date} type="date" name="date" id="date" className="w-[100%] font-light md:w-[250px] py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
+                        <input onChange={handleInputChange} value={form.date} type="date" name="date" id="date" className="w-[100%] md:w-[250px] font-light py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
                     </label>
-                    <label htmlFor="time" className="flex items-start gap-2 flex-col text-sm font-medium">
+                    <label htmlFor="time" className="flex items-start gap-2 flex-col text-sm font-medium w-[100%] md:w-[250px]">
                         Time
-                        <input onChange={handleInputChange} value={form.time} type="time" name="time" id="time" className="w-[100%] font-light md:w-[250px] py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
+                        <input onChange={handleInputChange} value={form.time} type="time" name="time" id="time" className="w-[100%] md:w-[250px] font-light py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
                     </label>
                 </div>
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
-                    <label htmlFor="name" className="flex items-start gap-2 flex-col text-sm font-medium">
+                    <label htmlFor="name" className="flex items-start gap-2 flex-col text-sm font-medium w-[100%] md:w-[250px]">
                         Name
                         <input onChange={handleInputChange} value={form.name} placeholder="Enter your name" type="text" name="name" autoComplete="off" autoFocus id="name" className="capitalize w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
                     </label>
-                    <label htmlFor="phone"  className="flex items-start gap-2 flex-col text-sm font-medium">
+                    <label htmlFor="phone"  className="flex items-start gap-2 flex-col text-sm font-medium w-[100%] md:w-[250px]">
                         Phone
                         <input onChange={handleInputChange} placeholder="x-xxx-xxx-xxx" value={form.phone} type="tel" name="phone" autoComplete="off" id="phone" className="w-[100%] md:w-[250px] py-2 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 text-[16px] placeholder:text-sm placeholder:text-gray-700 font-light" />
                     </label>

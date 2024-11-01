@@ -32,7 +32,7 @@ const AboutPage = () => {
                     Feel the authentic original taste from us.
                 </p>
             </div>
-            <div className="flex gap-4 justify-between px-8 md:px-12 lg:px-16 flex-col md:flex-row">
+            <div className="flex gap-6 md:gap-4 justify-between px-8 md:px-12 lg:px-16 flex-col md:flex-row">
                 {
                     section2.map((item, index) => (
                         <div key={index} className="flex flex-col gap-2 w-[100%] md:w-[250px]">
@@ -79,7 +79,7 @@ const AboutPage = () => {
                 </div>
             </div>
             <div>
-                <img src={info_image} alt='chef cooking' className="rounded-xl h-[400px] md:h-[500px] w-[100%] lg:w-auto" />
+                <img src={info_image} alt='chef cooking' className="rounded-xl h-[400px] md:h-[500px] w-[100%] lg:w-[500px]" />
             </div>
         </section>
 

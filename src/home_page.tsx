@@ -119,7 +119,7 @@ const HomePage = () => {
             {
               services.map((service, index) => (
                 <div key={index} className="flex w-[100%] md:w-[250px] gap-3 flex-col">
-                  <img src={service.image} alt={service.header} className="w-[100%] md:w-[250px] rounded-xl h-[250px] hover:shadow-xl hover:shadow-gray-400" />
+                  <img src={service.image} alt={service.header} className="w-[100%] md:w-[250px] rounded-xl h-[300px] md:h-[250px] hover:shadow-xl hover:shadow-gray-400" />
                   <h3 className="font-semibold text-xl">{service.header}</h3>
                   <p className="flex gap-4 text-sm leading-5 font-light">
                     {service.paragraphs}
@@ -133,8 +133,8 @@ const HomePage = () => {
 
         <section className="flex flex-col tablet:flex-row px-8 md:px-12 lg:px-16 py-16 gap-10 tablet:gap-24 items-center bg-[#F9F9F7]">
           <div className="flex gap-4 w-[100%] tablet:w-fit">
-            <img src={seventh_image} className="w-auto tablet:w-[280px] h-[420px]" alt="our chef" />
-            <div className="flex pt-2 flex-col self-end w-[100%] tablet:w-[fit] gap-4 mt-2">
+            <img src={seventh_image} className="w-[100%] tablet:w-[280px] h-[420px]" alt="our chef" />
+            <div className="tablet:flex pt-2 flex-col self-end w-[100%] hidden tablet:w-[fit] gap-4 mt-2">
               <img src={eight_image} alt="curry sauce" className="w-auto tablet:w-[250px] h-[200px]" />
               <img src={ninth_image} alt="pot of rice" className="w-auto tablet:w-[250px] h-[200px]" />
             </div>
