@@ -54,11 +54,11 @@ const BookPage = () => {
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
                     <label htmlFor="date" className="flex items-start gap-2 flex-col text-sm font-medium w-[100%] md:w-[250px]">
                         Date
-                        <input onChange={handleInputChange} value={form.date} type="date" name="date" id="date" className="w-[100%] md:w-[250px] font-light py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
+                        <input onChange={handleInputChange} placeholder="Pick a date" value={form.date} type="date" name="date" id="date" className="w-[100%] md:w-[250px] font-light py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 placeholder:text-sm placeholder:text-gray-700" />
                     </label>
                     <label htmlFor="time" className="flex items-start gap-2 flex-col text-sm font-medium w-[100%] md:w-[250px]">
                         Time
-                        <input onChange={handleInputChange} value={form.time} type="time" name="time" id="time" className="w-[100%] md:w-[250px] font-light py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2" />
+                        <input onChange={handleInputChange}  placeholder="Pick a time" value={form.time} type="time" name="time" id="time" className="w-[100%] md:w-[250px] font-light py-2 px-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-2 placeholder:text-sm placeholder:text-gray-700" />
                     </label>
                 </div>
                 <div className="flex gap-4 flex-col md:flex-row justify-between">
