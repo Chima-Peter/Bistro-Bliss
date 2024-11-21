@@ -15,6 +15,7 @@ import eight_image from './assets/images/home_page/curry.webp'
 import ninth_image from './assets/images/home_page/pot.webp'
 import Reviews from "./components/ui/reviews";
 import About from "./components/ui/about"
+import { motion } from 'motion/react'
 
 
 const HomePage = () => {
@@ -63,10 +64,46 @@ const HomePage = () => {
       paragraphs: 'Create a memorable dining experience for your guests with our group and event planning services'
     }
   ]
+
+
+  // variant for motion
+  const container = {
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // to stagger children animations so they don't happen once
+      }
+    }
+  }
+
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 50
+    },
+    visible: {
+      opacity: 1,
+      y: 0
+    }
+  }
+
+
   return (
-    <main className="font-body flex flex-col gap-12">
+    <motion.main 
+      className="font-body flex flex-col gap-12"
+      variants={container}
+      whileInView={'visible'}
+      viewport={{ once: true, amount: 0.3 }}
+      >
       <ExportNav />
-        <section className="bg-[url('./assets/images/home_page/first_image.webp')] relative w-[100%] h-[802px] flex items-center flex-col justify-center gap-8 lg:gap-6">
+        <motion.section 
+          className="bg-[url('./assets/images/home_page/first_image.webp')] relative w-[100%] h-[802px] flex items-center flex-col justify-center gap-8 lg:gap-6"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView={"visible"}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          >
           <h2 className="font-main leading-[54px] font-[100] text-[70px] w-[95%] md:w-[500px] text-center tracking-wider">
             Best food for your taste
           </h2>
@@ -82,10 +119,17 @@ const HomePage = () => {
             </Link>
           </div>
           <div className="w-[100%] h-[802px] opacity-15 lg:opacity-20 bg-black top-0 left-0 absolute" />
-        </section>
+        </motion.section>
 
 
-        <section className="flex flex-col gap-8 px-8 md:px-12 lg:px-16">
+        <motion.section 
+          className="flex flex-col gap-8 px-8 md:px-12 lg:px-16"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView={"visible"}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          >
           <h3 className="text-3xl self-center font-main font-medium">
             Browse Our Menu
           </h3>
@@ -105,13 +149,20 @@ const HomePage = () => {
               ))
             }
           </div>
-        </section>
+        </motion.section>
 
 
         <About link={true} color={false} />
 
 
-        <section className="flex flex-col gap-10 py-12 px-8 md:px-12 lg:px-16">
+        <motion.section 
+          className="flex flex-col gap-10 py-12 px-8 md:px-12 lg:px-16"
+          variants={fadeUp}
+          initial="hidden"
+            whileInView={"visible"}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          >
           <h4 className="font-main font-medium w-[100%] md:w-[350px] text-3xl">
             We also offer unique services for your events
           </h4>
@@ -128,10 +179,17 @@ const HomePage = () => {
               ))
             }
           </div>
-        </section>
+        </motion.section>
 
 
-        <section className="flex flex-col tablet:flex-row px-8 md:px-12 lg:px-16 py-16 gap-10 tablet:gap-24 items-center bg-[#F9F9F7]">
+        <motion.section 
+          className="flex flex-col tablet:flex-row px-8 md:px-12 lg:px-16 py-16 gap-10 tablet:gap-24 items-center bg-[#F9F9F7]"
+          variants={fadeUp}
+          initial="hidden"
+            whileInView={"visible"}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          >
           <div className="flex gap-4 w-[100%] tablet:w-fit">
             <img src={seventh_image} className="w-[100%] tablet:w-[280px] h-[420px]" alt="our chef" />
             <div className="tablet:flex pt-2 flex-col self-end w-[100%] hidden tablet:w-[fit] gap-4 mt-2">
@@ -173,14 +231,14 @@ const HomePage = () => {
               </li>
             </ul>
           </div>
-        </section>
+        </motion.section>
 
 
         <Reviews header="What Our Customers Say" />
 
 
       <Footer />
-    </main>
+    </motion.main>
   )
 }
 

@@ -2,14 +2,35 @@ import { FiPhone } from 'react-icons/fi'
 import { MdMailOutline, MdOutlineLocationOn } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import second_image from '../../assets/images/home_page/second_image.webp'
+import { motion } from 'motion/react'
+
+
 type Props = {
     link: boolean,
     color: boolean
 }
 
 const About = (props: Props) => {
+    const fadeUp = {
+        hidden: {
+          opacity: 0,
+          y: -50
+        },
+        visible: {
+          opacity: 1,
+          y: 0
+        }
+      }
+
   return (
-    <section className={`w-[100%] px-8 md:px-12 lg:px-16 flex flex-col tablet:flex-row justify-between items-center py-16 tablet:gap-4 gap-14 ${props.color ? 'bg-white' : 'bg-[#F8F9F7]'}`}>
+    <motion.section 
+        className={`w-[100%] px-8 md:px-12 lg:px-16 flex flex-col tablet:flex-row justify-between items-center py-16 tablet:gap-4 gap-14 ${props.color ? 'bg-white' : 'bg-[#F8F9F7]'}`}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView={"visible"}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        >
         <div className="w-[100%] tablet:w-[400px] relative flex justify-center tablet:justify-start">
         <img src={second_image} alt="picture of food" className="rounded-xl w-[100%] tablet:w-[95%]" />
         <div className="flex-col gap-6 absolute tablet:top-[42%] lg:top-[52%] tablet:right-[0] tablet:p-6 p-8 w-[40%] tablet:w-[300px] rounded-xl bg-[#474747] tablet:flex hidden">
@@ -56,7 +77,7 @@ const About = (props: Props) => {
             )
         }
         </div>
-    </section>
+    </motion.section>
   )
 }
 

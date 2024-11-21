@@ -1,6 +1,8 @@
 import author1 from '../../assets/images/home_page/author1.webp'
 import author2 from '../../assets/images/home_page/author2.webp'
 import author3 from '../../assets/images/home_page/author3.webp'
+import { motion } from 'motion/react'
+
 
 type Props = {
     header: string
@@ -30,8 +32,28 @@ const Reviews = (props: Props) => {
             image: author3
         }
     ]
+
+    const fadeUp = {
+        hidden: {
+          opacity: 0,
+          y: -50
+        },
+        visible: {
+          opacity: 1,
+          y: 0
+        }
+      }
+
+      
   return (
-    <section className="flex flex-col gap-10 px-8 md:px-12 lg:px-16 pt-8">
+    <motion.section 
+        className="flex flex-col gap-10 px-8 md:px-12 lg:px-16 pt-8"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView={"visible"}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        >
         <h5 className='font-main text-2xl self-center'>
             {props.header}
         </h5>
@@ -60,7 +82,7 @@ const Reviews = (props: Props) => {
                 ))
             }
         </div>
-    </section>
+    </motion.section>
   )
 }
 
