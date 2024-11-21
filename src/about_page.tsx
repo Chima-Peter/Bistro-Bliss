@@ -3,6 +3,9 @@ import ExportNav from "./components/ui/nav/export_nav"
 import Footer from "./components/ui/nav/footer"
 import info_image from './assets/images/about_page/info_image.webp'
 import Reviews from "./components/ui/reviews"
+import { motion } from 'motion/react'
+import { bounceTransition, container, fadeUp } from "./components/lib/variants"
+
 
 const AboutPage = () => {
     const section2 = [
@@ -22,11 +25,23 @@ const AboutPage = () => {
 
 
   return (
-    <main className="font-body flex flex-col gap-12">
+    <motion.main 
+        className="font-body flex flex-col gap-12"
+        variants={container}
+        whileInView={'visible'}
+        viewport={{ once: true, amount: 0.2 }}
+        >
         <ExportNav />
 
 
-        <section className="flex flex-col gap-12 pt-[60px]">
+        <motion.section 
+            className="flex flex-col gap-12 pt-[60px]"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView={"visible"}
+            transition={bounceTransition}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="w-[100%] bg-[url('./assets/images/about_page/BG.webp')] h-[690px] flex items-center justify-center ">
                 <p className="font-main font-regular text-4xl text-center md:text-left md:w-[550px] tracking-wide leading-12 w-[90%] text-white">
                     Feel the authentic original taste from us.
@@ -42,12 +57,19 @@ const AboutPage = () => {
                     ))
                 }
             </div>
-        </section>
+        </motion.section>
         
 
         <About link={false} color={true} />
 
-        <section className="bg-[#F9F9F7] flex px-8 md:px-12 py-12 lg:px-16 lg:justify-between lg:items-center flex-col-reverse lg:flex-row gap-12 lg:gap-0">
+        <motion.section 
+            className="bg-[#F9F9F7] flex px-8 md:px-12 py-12 lg:px-16 lg:justify-between lg:items-center flex-col-reverse lg:flex-row gap-12 lg:gap-0"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView={"visible"}
+            transition={bounceTransition}
+            viewport={{ once: true, amount: 0.2 }}
+            >
             <div className="flex flex-col gap-4 w-[100%] lg:w-[400px]">
                 <h2 className="text-4xl w-[100%] md:w-[350px]">
                     A little information for our valuable guests
@@ -81,14 +103,14 @@ const AboutPage = () => {
             <div>
                 <img src={info_image} alt='chef cooking' className="rounded-xl h-[400px] md:h-[500px] w-[100%] lg:w-[500px]" />
             </div>
-        </section>
+        </motion.section>
 
 
         <Reviews header="What Our Customers Say" />
 
 
         <Footer />
-    </main>
+    </motion.main>
   )
 }
 

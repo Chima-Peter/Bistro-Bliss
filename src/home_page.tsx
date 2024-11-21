@@ -16,6 +16,7 @@ import ninth_image from './assets/images/home_page/pot.webp'
 import Reviews from "./components/ui/reviews";
 import About from "./components/ui/about"
 import { motion } from 'motion/react'
+import { container, fadeUp, bounceTransition } from "./components/lib/variants";
 
 
 const HomePage = () => {
@@ -66,34 +67,12 @@ const HomePage = () => {
   ]
 
 
-  // variant for motion
-  const container = {
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2, // to stagger children animations so they don't happen once
-      }
-    }
-  }
-
-  const fadeUp = {
-    hidden: {
-      opacity: 0,
-      y: 50
-    },
-    visible: {
-      opacity: 1,
-      y: 0
-    }
-  }
-
-
   return (
     <motion.main 
       className="font-body flex flex-col gap-12"
       variants={container}
       whileInView={'visible'}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.2 }}
       >
       <ExportNav />
         <motion.section 
@@ -101,8 +80,8 @@ const HomePage = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView={"visible"}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={bounceTransition}
+          viewport={{ once: true, amount: 0.2 }}
           >
           <h2 className="font-main leading-[54px] font-[100] text-[70px] w-[95%] md:w-[500px] text-center tracking-wider">
             Best food for your taste
@@ -118,7 +97,6 @@ const HomePage = () => {
               Explore Menu
             </Link>
           </div>
-          <div className="w-[100%] h-[802px] opacity-15 lg:opacity-20 bg-black top-0 left-0 absolute" />
         </motion.section>
 
 
@@ -127,8 +105,8 @@ const HomePage = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView={"visible"}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={bounceTransition}
+          viewport={{ once: true, amount: 0.2 }}
           >
           <h3 className="text-3xl self-center font-main font-medium">
             Browse Our Menu
@@ -160,8 +138,8 @@ const HomePage = () => {
           variants={fadeUp}
           initial="hidden"
             whileInView={"visible"}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={bounceTransition}
+          viewport={{ once: true, amount: 0.2 }}
           >
           <h4 className="font-main font-medium w-[100%] md:w-[350px] text-3xl">
             We also offer unique services for your events
@@ -187,8 +165,8 @@ const HomePage = () => {
           variants={fadeUp}
           initial="hidden"
             whileInView={"visible"}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={bounceTransition}
+          viewport={{ once: true, amount: 0.2 }}
           >
           <div className="flex gap-4 w-[100%] tablet:w-fit">
             <img src={seventh_image} className="w-[100%] tablet:w-[280px] h-[420px]" alt="our chef" />

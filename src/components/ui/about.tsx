@@ -3,6 +3,7 @@ import { MdMailOutline, MdOutlineLocationOn } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import second_image from '../../assets/images/home_page/second_image.webp'
 import { motion } from 'motion/react'
+import { bounceTransition, fadeUp } from '../lib/variants'
 
 
 type Props = {
@@ -11,16 +12,7 @@ type Props = {
 }
 
 const About = (props: Props) => {
-    const fadeUp = {
-        hidden: {
-          opacity: 0,
-          y: -50
-        },
-        visible: {
-          opacity: 1,
-          y: 0
-        }
-      }
+    
 
   return (
     <motion.section 
@@ -28,8 +20,8 @@ const About = (props: Props) => {
         variants={fadeUp}
         initial="hidden"
         whileInView={"visible"}
-        transition={{ duration: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={bounceTransition}
+        viewport={{ once: true, amount: 0.2 }}
         >
         <div className="w-[100%] tablet:w-[400px] relative flex justify-center tablet:justify-start">
         <img src={second_image} alt="picture of food" className="rounded-xl w-[100%] tablet:w-[95%]" />

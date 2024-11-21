@@ -2,6 +2,7 @@ import author1 from '../../assets/images/home_page/author1.webp'
 import author2 from '../../assets/images/home_page/author2.webp'
 import author3 from '../../assets/images/home_page/author3.webp'
 import { motion } from 'motion/react'
+import { fadeUp, bounceTransition } from '../lib/variants'
 
 
 type Props = {
@@ -33,16 +34,6 @@ const Reviews = (props: Props) => {
         }
     ]
 
-    const fadeUp = {
-        hidden: {
-          opacity: 0,
-          y: -50
-        },
-        visible: {
-          opacity: 1,
-          y: 0
-        }
-      }
 
       
   return (
@@ -51,8 +42,8 @@ const Reviews = (props: Props) => {
         variants={fadeUp}
         initial="hidden"
         whileInView={"visible"}
-        transition={{ duration: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={bounceTransition}
+        viewport={{ once: true, amount: 0.2 }}
         >
         <h5 className='font-main text-2xl self-center'>
             {props.header}
